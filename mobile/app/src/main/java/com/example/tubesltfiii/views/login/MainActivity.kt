@@ -1,8 +1,9 @@
-package com.example.tubesltfiii
+package com.example.tubesltfiii.views.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.tubesltfiii.views.bluetooth.Bluetooth
 import com.example.tubesltfiii.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

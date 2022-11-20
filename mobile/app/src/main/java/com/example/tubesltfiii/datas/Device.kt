@@ -1,4 +1,4 @@
-package com.example.tubesltfiii
+package com.example.tubesltfiii.datas
 
 data class Device(
     val name: String,

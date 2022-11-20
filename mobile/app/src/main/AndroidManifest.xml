@@ -11,11 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TubesLTFIII">
         <activity
-            android:name=".Bluetooth"
+            android:name=".views.bluetooth.Bluetooth"
             android:label="@string/title_activity_bluetooth"
             android:theme="@style/Theme.TubesLTFIII.NoActionBar"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".views.login.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.TubesLTFIII.NoActionBar">
             <intent-filter>

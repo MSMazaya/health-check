@@ -1,4 +1,4 @@
-package com.example.tubesltfiii
+package com.example.tubesltfiii.views.bluetooth
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
