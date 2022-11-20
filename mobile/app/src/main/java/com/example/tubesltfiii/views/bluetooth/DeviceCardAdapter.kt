@@ -1,5 +1,7 @@
 package com.example.tubesltfiii.views.bluetooth
 
+import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +10,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tubesltfiii.R
 import com.example.tubesltfiii.datas.Device
+import com.example.tubesltfiii.views.main.MainActivity
 import com.google.android.material.card.MaterialCardView
 
 class DeviceCardAdapter(
+    private val context: Context,
     private val devices: List<Device>,
 ) : RecyclerView.Adapter<DeviceCardAdapter.DeviceCardViewHolder>() {
 
@@ -34,12 +38,11 @@ class DeviceCardAdapter(
         holder.textView.text = curDevice.name
 
         holder.card.setOnClickListener {
-            Log.d("BUTTON", curDevice.name)
+            context.startActivity(Intent(context, MainActivity::class.java))
         }
     }
 
     override fun getItemCount(): Int {
-        Log.d("GetItemCount", devices.size.toString())
         return devices.size
     }
 }

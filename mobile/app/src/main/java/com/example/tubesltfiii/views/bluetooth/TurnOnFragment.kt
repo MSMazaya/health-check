@@ -9,14 +9,14 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.example.tubesltfiii.R
-import com.example.tubesltfiii.databinding.FragmentFirstBinding
+import com.example.tubesltfiii.databinding.FragmentBluetoothTurnOnBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class TurnOnFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentBluetoothTurnOnBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,7 +27,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentBluetoothTurnOnBinding.inflate(inflater, container, false)
         return binding.root
     }
 

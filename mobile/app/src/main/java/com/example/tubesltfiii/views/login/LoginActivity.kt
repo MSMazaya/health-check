@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.tubesltfiii.databinding.ActivityLoginBinding
-import com.example.tubesltfiii.views.bluetooth.Bluetooth
+import com.example.tubesltfiii.views.bluetooth.BluetoothActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener {
-            Intent(this, Bluetooth::class.java).also {
+            Intent(this, BluetoothActivity::class.java).also {
                 startActivity(it)
             }
         }

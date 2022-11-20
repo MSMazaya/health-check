@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.tubesltfiii.R
-import com.example.tubesltfiii.databinding.FragmentSecond2Binding
+import com.example.tubesltfiii.databinding.FragmentMainAddDataBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class Second2Fragment : Fragment() {
+class AddDataFragment : Fragment() {
 
-    private var _binding: FragmentSecond2Binding? = null
+    private var _binding: FragmentMainAddDataBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,7 +25,7 @@ class Second2Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecond2Binding.inflate(inflater, container, false)
+        _binding = FragmentMainAddDataBinding.inflate(inflater, container, false)
         return binding.root
 
     }

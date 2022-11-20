@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.tubesltfiii.R
-import com.example.tubesltfiii.databinding.FragmentFirst2Binding
+import com.example.tubesltfiii.databinding.FragmentMainHomeBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class First2Fragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private var _binding: FragmentFirst2Binding? = null
+    private var _binding: FragmentMainHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,9 +25,8 @@ class First2Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirst2Binding.inflate(inflater, container, false)
+        _binding = FragmentMainHomeBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

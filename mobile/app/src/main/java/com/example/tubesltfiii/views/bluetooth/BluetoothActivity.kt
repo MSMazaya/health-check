@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.example.tubesltfiii.databinding.ActivityBluetoothBinding
 
-class Bluetooth : AppCompatActivity() {
+class BluetoothActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityBluetoothBinding
