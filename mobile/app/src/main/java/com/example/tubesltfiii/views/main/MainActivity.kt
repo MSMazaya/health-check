@@ -24,12 +24,13 @@ class MainActivity : AppCompatActivity() {
 
         val homeFragment = HomeFragment()
         val addDataFragment = AddDataFragment()
+        val graphsFragment = GraphsFragment()
 
         binding.bnvMain.setOnNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.miHome -> setCurrentFragment(homeFragment)
                 R.id.miAddData -> setCurrentFragment(addDataFragment)
-                R.id.miStats -> setCurrentFragment(homeFragment)
+                R.id.miStats -> setCurrentFragment(graphsFragment)
             }
             true
         }

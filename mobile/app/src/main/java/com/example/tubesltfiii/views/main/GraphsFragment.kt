@@ -6,16 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.airbnb.lottie.LottieAnimationView
 import com.example.tubesltfiii.R
-import com.example.tubesltfiii.databinding.FragmentMainAddDataBinding
+import com.example.tubesltfiii.databinding.FragmentMainGraphsBinding
+import com.example.tubesltfiii.databinding.FragmentMainHomeBinding
 
 /**
- * A simple [Fragment] subclass as the second destination in the navigation.
+ * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class AddDataFragment : Fragment() {
+class GraphsFragment : Fragment() {
 
-    private var _binding: FragmentMainAddDataBinding? = null
+    private var _binding: FragmentMainGraphsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -26,23 +26,13 @@ class AddDataFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentMainAddDataBinding.inflate(inflater, container, false)
-
-
+        _binding = FragmentMainGraphsBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val animationView: LottieAnimationView = binding.lavHeartBeat
 
-        animationView.setAnimation("radiation.json")
-
-        animationView.playAnimation()
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_Second2Fragment_to_First2Fragment)
-//        }
     }
 
     override fun onDestroyView() {
