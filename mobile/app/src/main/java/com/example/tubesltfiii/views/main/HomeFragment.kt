@@ -8,6 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.tubesltfiii.R
 import com.example.tubesltfiii.databinding.FragmentMainHomeBinding
+import com.example.tubesltfiii.datas.CheckHistory
+import com.example.tubesltfiii.datas.Device
+import com.example.tubesltfiii.views.bluetooth.CheckHistoryCardAdapter
+import com.example.tubesltfiii.views.bluetooth.DeviceCardAdapter
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -26,15 +30,24 @@ class HomeFragment : Fragment() {
     ): View? {
 
         _binding = FragmentMainHomeBinding.inflate(inflater, container, false)
+
+        val data = listOf<CheckHistory>(
+            CheckHistory("Hydration Level: 90%", "Pulse: 100 bpm", "12/11/2022 17:58"),
+            CheckHistory("Hydration Level: 90%", "Pulse: 100 bpm", "12/11/2022 17:58"),
+            CheckHistory("Hydration Level: 90%", "Pulse: 100 bpm", "12/11/2022 17:58"),
+            CheckHistory("Hydration Level: 90%", "Pulse: 100 bpm", "12/11/2022 17:58"),
+        )
+
+        if(activity != null) {
+            binding.rvCheckHistories.adapter = CheckHistoryCardAdapter(data)
+        }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_First2Fragment_to_Second2Fragment)
-//        }
     }
 
     override fun onDestroyView() {

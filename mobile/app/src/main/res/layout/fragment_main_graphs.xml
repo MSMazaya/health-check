@@ -7,6 +7,36 @@
     android:background="@color/purple_bg"
     tools:context=".views.main.GraphsFragment">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="History"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView3">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            tools:src="@tools:sample/avatars" />
+    </com.google.android.material.card.MaterialCardView>
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -14,7 +44,138 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline11"
         app:cardCornerRadius="25dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+
+            <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+                android:id="@+id/chartHydrationLevel"
+                android:layout_width="0dp"
+                android:layout_height="225dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+                android:id="@+id/buttonGroup_lordOfTheRings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="4dp"
+                android:background="#E6EDFE"
+                android:elevation="2dp"
+                app:borderWidth="0dp"
+                app:dividerPadding="10dp"
+                app:selectedButtonRadius="10dp"
+                app:dividerWidth="1dp"
+                app:layout_constraintEnd_toEndOf="@+id/chartHydrationLevel"
+                app:layout_constraintStart_toStartOf="@+id/chartHydrationLevel"
+                app:layout_constraintTop_toBottomOf="@+id/chartHydrationLevel"
+                app:position="0"
+                app:radius="30dp"
+                app:ripple="true"
+                app:rippleColor="@color/black"
+                app:selectedBackground="@color/black">
+
+                <com.addisonelliott.segmentedbutton.SegmentedButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:drawableGravity="top"
+                    app:selectedTextColor="@color/white"
+                    app:text="Day"
+                    app:textColor="@color/black" />
+
+                <com.addisonelliott.segmentedbutton.SegmentedButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:drawableGravity="top"
+                    app:selectedTextColor="@color/white"
+                    app:text="Week"
+                    app:textColor="@color/black" />
+
+                <com.addisonelliott.segmentedbutton.SegmentedButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:drawableGravity="top"
+                    app:selectedTextColor="@color/white"
+                    app:text="Month"
+                    app:textColor="@color/black" />
+            </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+            <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+                android:id="@+id/chartPulse"
+                android:layout_width="0dp"
+                android:layout_height="225dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonGroup_lordOfTheRings" />
+
+            <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+                android:id="@+id/buttonGroup_date2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="4dp"
+                android:background="#E6EDFE"
+                android:elevation="2dp"
+                app:borderWidth="0dp"
+                app:dividerPadding="10dp"
+                app:selectedButtonRadius="10dp"
+                app:dividerWidth="1dp"
+                app:layout_constraintEnd_toEndOf="@+id/chartHydrationLevel"
+                app:layout_constraintStart_toStartOf="@+id/chartHydrationLevel"
+                app:layout_constraintTop_toBottomOf="@+id/chartPulse"
+                app:position="0"
+                app:radius="10dp"
+                app:ripple="true"
+                app:rippleColor="@color/black"
+                app:selectedBackground="@color/black">
+
+                <com.addisonelliott.segmentedbutton.SegmentedButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:drawableGravity="top"
+                    app:selectedTextColor="@color/white"
+                    app:text="Day"
+                    app:textColor="@color/black" />
+
+                <com.addisonelliott.segmentedbutton.SegmentedButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:drawableGravity="top"
+                    app:selectedTextColor="@color/white"
+                    app:text="Week"
+                    app:textColor="@color/black" />
+
+                <com.addisonelliott.segmentedbutton.SegmentedButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:drawableGravity="top"
+                    app:selectedTextColor="@color/white"
+                    app:text="Month"
+                    app:textColor="@color/black" />
+            </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.constraintlayout.widget.Guideline
@@ -22,5 +183,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.15" />
 </androidx.constraintlayout.widget.ConstraintLayout>

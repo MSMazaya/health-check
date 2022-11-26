@@ -8,6 +8,7 @@
     tools:context=".views.login.LoginActivity">
 
     <TextView
+        android:paddingHorizontal="10dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,30 +21,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        android:layout_marginVertical="30dp"/>
+        android:layout_marginVertical="30dp"
+        />
 
     <EditText
+        android:layout_marginHorizontal="30dp"
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#000000"
+        android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="example@gmail.com"
         android:inputType="textPersonName"
+        android:padding="5dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:src="@drawable/bottom_stroke"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:backgroundTint="@color/white"
+        android:hint="*******"
+        android:background="#000000"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:src="@drawable/bottom_stroke"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <TextView
         android:id="@+id/textView2"
@@ -55,7 +82,8 @@
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         android:layout_marginTop="30dp"
-        android:textColor="@color/purple_500"/>
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/btnLogin"
@@ -67,6 +95,8 @@
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:theme="@style/BottomNavigationTheme"
+        app:layout_constraintCircleRadius="20dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
