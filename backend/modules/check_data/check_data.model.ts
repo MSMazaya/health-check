@@ -8,6 +8,12 @@ export interface CheckDataModel {
   date: string;
 }
 
+export interface GetCheckDataFilter {
+  limit?: number;
+  dateStart?: string;
+  dateEnd?: string;
+}
+
 export type CheckDataSchema = CheckDataModel & {
   _id: ObjectId;
 };

@@ -1,6 +1,6 @@
 import { Context } from "https://deno.land/x/oak@v11.1.0/context.ts";
 import { ObjectId } from "https://deno.land/x/web_bson@v0.2.5/mod.ts";
-import { CheckDataModel } from "./check_data.model.ts";
+import { CheckDataModel, GetCheckDataFilter } from "./check_data.model.ts";
 import checkDataRepository from "./check_data.repository.ts";
 
 const getCheckData = async (
@@ -9,7 +9,14 @@ const getCheckData = async (
   try {
     const user = context.state.user as { userId: ObjectId };
 
-    const checkDatas = await checkDataRepository.getCheckDatas(user.userId);
+    const body = context.request.body();
+
+    const filter: GetCheckDataFilter = await body.value;
+
+    const checkDatas = await checkDataRepository.getCheckDatas(
+      user.userId,
+      filter,
+    );
 
     context.response.body = {
       status: 200,

@@ -5,7 +5,7 @@ import checkDataController from "./check_data.controller.ts";
 const router = new Router();
 
 router.use(authMiddleware.authentication);
-router.get("/check-data", checkDataController.getCheckData);
-router.post("/check-data", checkDataController.createCheckData);
+router.post("/get-check-data", checkDataController.getCheckData);
+router.post("/create-check-data", checkDataController.createCheckData);
 
 export default router.routes();
