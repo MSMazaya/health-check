@@ -18,10 +18,13 @@ export const getAuthKey = async (userId: ObjectId): Promise<string> => {
 
 export const authenticate = async (
   jwt: string,
-): Promise<[boolean | null, { userId: string } | null]> => {
+): Promise<[boolean | null, { userId: ObjectId } | null]> => {
   try {
     const payload = await verify(jwt, jwtKey);
-    return [true, { userId: payload.userId as string }];
+
+    return [true, {
+      userId: ObjectId.createFromHexString(payload.userId as string),
+    }];
   } catch {
     return [false, null];
   }

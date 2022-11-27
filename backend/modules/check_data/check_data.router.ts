@@ -6,5 +6,6 @@ const router = new Router();
 
 router.use(authMiddleware.authentication);
 router.get("/check-data", checkDataController.getCheckData);
+router.post("/check-data", checkDataController.createCheckData);
 
 export default router.routes();
