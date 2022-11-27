@@ -7,3 +7,10 @@ export const hashPassword = (password: string) => {
 
   return hashedPassword;
 };
+
+export const validateHash = (password: string, hash: string) => {
+  const md5 = new Md5();
+  const hashedPassword = md5.update(password).toString();
+
+  return hashedPassword === hash;
+};
