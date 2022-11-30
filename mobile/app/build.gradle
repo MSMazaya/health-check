@@ -37,6 +37,11 @@ android {
 
 dependencies {
     api 'com.google.android.material:material:1.1.0-alpha06'
+    implementation 'com.github.kittinunf.fuel:fuel:2.3.1'
+    implementation 'com.github.kittinunf.fuel:fuel-android:2.3.1'
+    implementation "com.github.kittinunf.result:result:3.1.0"
+    implementation 'com.github.kittinunf.fuel:fuel-kotlinx-serialization:2.3.1'
+    implementation 'com.github.kittinunf.fuel:fuel-jackson:2.3.1'
     implementation 'com.github.addisonelliott:SegmentedButton:3.1.9'
     implementation 'com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT'
     implementation 'com.airbnb.android:lottie:3.4.0'
