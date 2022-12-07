@@ -76,7 +76,7 @@
                 app:layout_constraintStart_toStartOf="@+id/chartHydrationLevel"
                 app:layout_constraintTop_toBottomOf="@+id/chartHydrationLevel"
                 app:position="0"
-                app:radius="30dp"
+                app:radius="10dp"
                 app:ripple="true"
                 app:rippleColor="@color/black"
                 app:selectedBackground="@color/black">

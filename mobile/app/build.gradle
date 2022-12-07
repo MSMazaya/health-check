@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.tubesltfiii"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
@@ -41,6 +41,7 @@ dependencies {
     implementation 'com.github.kittinunf.fuel:fuel-android:2.3.1'
     implementation "com.github.kittinunf.result:result:3.1.0"
     implementation 'com.github.kittinunf.fuel:fuel-kotlinx-serialization:2.3.1'
+    implementation 'dev.bluefalcon:blue-falcon-android-debug:0.10.5'
     implementation 'com.github.kittinunf.fuel:fuel-jackson:2.3.1'
     implementation 'com.github.addisonelliott:SegmentedButton:3.1.9'
     implementation 'com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT'

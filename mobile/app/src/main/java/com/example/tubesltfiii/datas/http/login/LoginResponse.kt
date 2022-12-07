@@ -7,7 +7,7 @@ data class LoginResponsePayload(
 )
 
 data class LoginResponse(
-    val payload: LoginResponsePayload,
+    val payload: LoginResponsePayload?,
     override val status: Number,
     override val message: String
 ) : BaseResponse

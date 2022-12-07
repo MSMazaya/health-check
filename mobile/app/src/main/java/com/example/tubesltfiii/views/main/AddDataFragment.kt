@@ -63,6 +63,10 @@ class AddDataFragment : Fragment() {
             )
 
         binding.chartLiveInput.aa_drawChartWithChartModel(liveChartModel)
+
+        binding.buttonSecond.setOnClickListener {
+            binding.lavHeartBeat.playAnimation()
+        }
 //        binding.buttonSecond.setOnClickListener {
 //            findNavController().navigate(R.id.action_Second2Fragment_to_First2Fragment)
 //        }

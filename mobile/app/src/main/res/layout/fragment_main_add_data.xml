@@ -80,7 +80,6 @@
                     android:id="@+id/lavHeartBeat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:lottie_autoPlay="true"
                     android:layout_margin="20dp"
                     app:lottie_url="https://assets10.lottiefiles.com/packages/lf20_di28l3n6.json"
                     app:layout_constraintBottom_toBottomOf="@+id/fabBluetooth"

@@ -34,7 +34,7 @@ class GraphsFragment : Fragment() {
         val hydrationChartModel : AAChartModel = AAChartModel()
             .chartType(AAChartType.Area)
             .yAxisTitle("SpO2")
-            .title("Hydration Level")
+            .title("Oxygen Saturation")
             .backgroundColor("#FFFFFF")
             .series(arrayOf(
                 AASeriesElement()
