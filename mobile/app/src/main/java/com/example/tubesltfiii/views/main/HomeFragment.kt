@@ -73,7 +73,11 @@ class HomeFragment : Fragment() {
                                 "Pulse: " + it.pulse.toString() + " BPM",
                                 it.date.slice(IntRange(0,9)) + " " + it.date.slice(IntRange(11,15))
                             )
-                        }
+                        }?.reversed()
+
+                        val mostRecentData = data.payload?.get(data.payload.size-1)
+                        binding.oxygenSaturationText.text = mostRecentData?.oxygenSaturation.toString()
+                        binding.bpmText.text = mostRecentData?.pulse.toString()
 
                         if(activity != null) {
                             if (checksTransformed !== null) {

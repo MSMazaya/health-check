@@ -10,11 +10,19 @@ data class GetCheckHealthRequest(
     val dateEnd: Date?
 ) : BaseRequest() {
     override fun toJsonString(): String {
+        var dateStartText = "null"
+        var dateEndText = "null"
+        if(dateStart != null) {
+            dateStartText = "\"${dateStart.toIsoString()}\""
+        }
+        if(dateEnd != null) {
+            dateEndText = "\"${dateEnd.toIsoString()}\""
+        }
         return """
             {
                 "limit": ${limit.toString()},
-                "dateStart": ${dateStart.toIsoString()},
-                "dateEnd": ${dateEnd.toIsoString()}
+                "dateStart": $dateStartText,
+                "dateEnd": $dateEndText
             }
         """.trimIndent()
     }
