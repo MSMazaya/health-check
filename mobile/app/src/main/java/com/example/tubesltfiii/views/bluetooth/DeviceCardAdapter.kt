@@ -1,5 +1,6 @@
 package com.example.tubesltfiii.views.bluetooth
 
+import android.bluetooth.BluetoothDevice
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -15,7 +16,7 @@ import com.google.android.material.card.MaterialCardView
 
 class DeviceCardAdapter(
     private val context: Context,
-    private val devices: List<Device>,
+    private val devices: List<BluetoothDevice>,
 ) : RecyclerView.Adapter<DeviceCardAdapter.DeviceCardViewHolder>() {
 
     class DeviceCardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,7 +39,9 @@ class DeviceCardAdapter(
         holder.textView.text = curDevice.name
 
         holder.card.setOnClickListener {
-            context.startActivity(Intent(context, MainActivity::class.java))
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("DeviceAddress", curDevice.address)
+            context.startActivity(intent)
         }
     }
 

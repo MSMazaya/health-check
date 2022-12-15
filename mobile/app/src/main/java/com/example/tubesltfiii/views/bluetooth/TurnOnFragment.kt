@@ -10,6 +10,10 @@ import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.example.tubesltfiii.R
 import com.example.tubesltfiii.databinding.FragmentBluetoothTurnOnBinding
+import androidx.fragment.app.activityViewModels
+import com.example.tubesltfiii.utils.BluetoothUtil
+import com.example.tubesltfiii.views.bluetooth.viewmodel.BluetoothViewModel
+
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -21,6 +25,7 @@ class TurnOnFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val viewModel: BluetoothViewModel by activityViewModels<BluetoothViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,11 +47,15 @@ class TurnOnFragment : Fragment() {
             binding.tvConnecting.visibility = View.VISIBLE
             animationView.playAnimation()
             var counter = 0
+
+            val bluetoothUtil = BluetoothUtil(requireContext())
+            bluetoothUtil.scanLeDevice(viewModel.leScanCallback)
+
             val timer = object: CountDownTimer(10000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     if (counter == 3) {
                         counter = 0
-                        binding.tvConnecting.text = "Connecting"
+                        binding.tvConnecting.text = "Searching"
                     }
 
                     counter++
