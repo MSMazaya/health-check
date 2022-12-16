@@ -42,6 +42,7 @@ class AddDataFragment : Fragment(), CoroutineScope by MainScope() {
     // onDestroyView.
     private val binding get() = _binding!!
     private var pulseData = mutableListOf<Double>()
+    private var spo2Data = mutableListOf<Double>()
     private var recording = false;
 
     override fun onCreateView(
@@ -62,7 +63,7 @@ class AddDataFragment : Fragment(), CoroutineScope by MainScope() {
             .chartType(AAChartType.Area)
             .yAxisTitle("BPM")
             .axesTextColor("#FFFFFF")
-            .title("Pulse")
+            .title("Pulse & SpO2")
             .backgroundColor("#4B1EC5")
             .series(arrayOf())
 
@@ -72,8 +73,12 @@ class AddDataFragment : Fragment(), CoroutineScope by MainScope() {
             .name("Pulse")
             .data(pulseData.toTypedArray());
 
+        val spo2Series = AASeriesElement()
+            .name("SpO2")
+            .data(spo2Data.toTypedArray());
+
         binding.chartLiveInput.aa_refreshChartWithChartModel(liveChartModel.series(
-            arrayOf(pulseSeries)))
+            arrayOf(pulseSeries, spo2Series)))
     }
 
     fun startInfiniteExecution() {
@@ -82,6 +87,7 @@ class AddDataFragment : Fragment(), CoroutineScope by MainScope() {
                 if(recording) {
                     Log.d("Recording", "Recording...")
                     pulseData.add(viewModel.getHeartBeat())
+                    spo2Data.add(viewModel.getSPO2())
                     updatePulse()
                 }
                 delay(1_000)
@@ -138,6 +144,7 @@ class AddDataFragment : Fragment(), CoroutineScope by MainScope() {
 
         binding.fabRetry.setOnClickListener {
             pulseData = mutableListOf()
+            spo2Data = mutableListOf()
             updatePulse()
         }
 
@@ -146,7 +153,7 @@ class AddDataFragment : Fragment(), CoroutineScope by MainScope() {
 
             val request = CreateCheckHealthRequest(
                 pulseData.sum()/pulseData.size,
-                0,
+                spo2Data.sum()/spo2Data.size,
                 Date(),
             )
 
